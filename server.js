@@ -1,11 +1,12 @@
 
 // Import the WebSocketServer class from the 'ws' library 
 const { WebSocketServer } = require('ws'); 
+const port = 8080;
+
+// Create a new WebSocket server on given port 
+const wss = new WebSocketServer({ port }); 
  
-// Create a new WebSocket server on port 8080 
-const wss = new WebSocketServer({ port: 8080 }); 
- 
-console.log('WebSocket server started on port 8080'); 
+console.log(`WebSocket server started on port ${port}`); 
  
 // Listen for new connections 
 wss.on('connection', (ws) => { 
